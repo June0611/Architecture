@@ -47,8 +47,8 @@ public class DBServer {
 	}
 
 	public UserBean findUser(String userName, String password) {
-		String sql = "select * from (User_TB) where (UserName)=(" + userName
-				+ ") and (PassWord)=(" + password + ")";
+		String sql = "select * from User_TB where UserName=" + "'"+ userName +"'"
+				+ " and PassWord=" + "'"+password + "'";
 		return findUserWithSqlString(sql);
 	}
 
@@ -66,14 +66,14 @@ public class DBServer {
 			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
 				user = new UserBean();
-				user.setUserID(rs.getString(0));
-				user.setUserName(rs.getString(1));
-				user.setUserPassword(rs.getString(2));
-				user.setNickName(rs.getString(3));
-				user.setEmail(rs.getString(4));
-				user.setBirthDay(rs.getString(5));
-				user.setPhoneNumber(rs.getString(6));
-				user.setCreatTime(rs.getString(7));
+				user.setUserID(rs.getString(1));
+				user.setUserName(rs.getString(2));
+				user.setUserPassword(rs.getString(3));
+				user.setNickName(rs.getString(4));
+				user.setEmail(rs.getString(5));
+				user.setBirthDay(rs.getString(6));
+				user.setPhoneNumber(rs.getString(7));
+				user.setCreatTime(rs.getString(8));
 				cnn.close();
 			}
 		} catch (SQLException e) {
