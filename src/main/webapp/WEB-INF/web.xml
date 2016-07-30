@@ -9,4 +9,18 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  
+  <servlet>
+    <servlet-name>Demo1</servlet-name>
+    <servlet-class>cn.june.Service.Demo1</servlet-class>
+</servlet>
+<!--设置请求对应的Servlet名称-->
+<servlet-mapping>
+    <servlet-name>Demo1</servlet-name>
+    <url-pattern>/sevelet/Demo1</url-pattern>
+</servlet-mapping>
+  
+  
+  
 </web-app>
